@@ -110,7 +110,7 @@ To add an entry, copy an existing one and keep the classes. To start a new timel
 
 ## Sidebar navigation
 
-The sidebar has flat, always-expanded groups. Each group is a small uppercase heading with a list of links under it. The site ships without JavaScript, so nothing in the sidebar collapses. There is no "Home" link: the logo and the "OFSCA" title already go to the home page.
+The sidebar has flat, always-expanded groups. Each group is a small uppercase heading with a list of links under it. The site ships without JavaScript, so nothing in the sidebar collapses. There is no "Home" link: the logo and the "OFSCA" title already go to the home page. The logo fills the sidebar width (with a 16px gutter on each side), which is about its native 257px size.
 
 | Group | Pages |
 | --- | --- |

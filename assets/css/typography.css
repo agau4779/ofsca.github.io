@@ -247,3 +247,14 @@ ul.tl-body { padding-left: 1.25rem !important; }
   background: var(--color-accent);
 }
 .JzO0Vc .nav-sub.lhZOrc::before { left: 1.5rem; }
+
+/* Sidebar logo: fill the sidebar width (the source image is 257×235, so
+   250px sidebar minus a 16px gutter shows it at ~native resolution). */
+.JzO0Vc .XMyrgf { margin: 0 16px 8px; }
+.JzO0Vc .r9CsCb {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
+}
