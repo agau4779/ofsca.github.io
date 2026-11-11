@@ -191,3 +191,59 @@ ul.tl-body { padding-left: 1.25rem !important; }
 @supports not (top: 1lh) {
   .tl > li > p::before, .tl-item::before, h3.tl-item::before { top: 0.2em; }
 }
+
+/* ==========================================================================
+   Sidebar navigation
+   Flat, always-expanded groups: <p.nav-heading> + <ul.nav-list> of
+   .nav-item links; one optional level of .nav-sub links. Built by markup
+   only (the export ships no JS), so nothing collapses.
+   ========================================================================== */
+.nav-groups { padding: 0 0 2rem; }
+.nav-heading {
+  margin: 1.5rem 0 0.35rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.nav-groups > .nav-heading:first-child { margin-top: 0.5rem; }
+.nav-list { list-style: none; margin: 0; padding: 0; }
+
+.JzO0Vc .nav-item, .JzO0Vc .nav-sub {
+  position: relative;
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+  white-space: normal;
+}
+.JzO0Vc .nav-sub { padding-left: 2.25rem; font-size: 0.875rem; }
+.nav-item .hDrhEe, .nav-sub .hDrhEe {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  line-height: 1.35;
+  border-radius: 6px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.nav-item .hDrhEe:hover, .nav-sub .hDrhEe:hover {
+  background-color: var(--color-surface-tint);
+  color: var(--color-text);
+}
+.nav-item .hDrhEe:focus-visible, .nav-sub .hDrhEe:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+/* Current page */
+.nav-item.lhZOrc, .nav-sub.lhZOrc { font-weight: 700; color: var(--color-brand-dark); }
+.nav-item.lhZOrc::before, .nav-sub.lhZOrc::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+.JzO0Vc .nav-sub.lhZOrc::before { left: 1.5rem; }

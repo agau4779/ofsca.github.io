@@ -8,7 +8,7 @@ How text, colour and timelines look on oakland-fukuoka.org, and where each rule 
 | --- | --- |
 | `assets/css/site.css` | Google Sites layout and components (nav, header, grid). Font stacks point at `var(--font-sans)`. |
 | `assets/css/theme.css` | Section colours (white, pale-green and dark-green bands, photo hero), spacing, and the `.sN` utility classes from the original export. **It has no font families or sizes.** |
-| `assets/css/typography.css` | **The source of truth.** Design tokens, the type scale, heading hierarchy, link styles and timelines. It loads last on every page. |
+| `assets/css/typography.css` | **The source of truth.** Design tokens, the type scale, heading hierarchy, link styles, timelines and the sidebar nav. It loads last on every page. |
 
 Each page `<head>` loads the fonts from Google Fonts, then `site.css`, `theme.css` and `typography.css`, in that order.
 
@@ -107,6 +107,24 @@ Two markup patterns:
 - Write date ranges with an en dash and spaces (`1962 – 1963`). Write time ranges without spaces (`2–5 pm`).
 
 To add an entry, copy an existing one and keep the classes. To start a new timeline on another page, use one of the two patterns above. No extra CSS is needed.
+
+## Sidebar navigation
+
+The sidebar has flat, always-expanded groups. Each group is a small uppercase heading with a list of links under it. The site ships without JavaScript, so nothing in the sidebar collapses. There is no "Home" link: the logo and the "OFSCA" title already go to the home page.
+
+| Group | Pages |
+| --- | --- |
+| About OFSCA | About Us, History |
+| Get Involved | 2026 Calendar, Become a Member, Contact Us |
+| Ongoing Activities | All Programs, Youth Exchange, Asian-Pacific Children's Convention, Bridge Club International, Adult Exchange, Otsukimi Moon-Viewing Party, Torii Gate |
+| Past Events | 60th Anniversary (2022–2023), Mosaic Mural Project → About the Art, Pebble Collection Day, Mosaic Class & Fabrication |
+| Resources | Photo Gallery, Links |
+
+- **Markup:** `<p class="nav-heading">` followed by `<ul class="nav-list">` of `.nav-item` links. Nest at most one level, using `.nav-sub` links.
+- **Current page:** the current page's link gets `aria-current="page"` and the `lhZOrc` class, which makes it bold, dark green, with a 3px accent bar on the left.
+- **Hover:** links get a pale-green (`--color-surface-tint`) pill behind them.
+- **Updating the nav:** the same nav is copied into every page. When you add or rename a page, update it on all pages. Each page's links are relative to that page's own folder.
+- **Calendar link:** rename "2026 Calendar" when the year changes.
 
 ## Pasting content from Google Docs / Sites
 
