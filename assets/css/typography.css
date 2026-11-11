@@ -1,0 +1,193 @@
+/* ==========================================================================
+   OFSCA typography & colour system
+   Loaded after site.css and theme.css on every page. See styling.md.
+   ========================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Families (Google Fonts, loaded in each page <head>) */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-timeline: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale: fluid between ~375px and ~1280px viewports */
+  --fs-display: clamp(2.25rem, 1.7rem + 2.4vw, 3.25rem);  /* page title / hero */
+  --fs-h1: clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);       /* section heading */
+  --fs-h2: clamp(1.375rem, 1.25rem + 0.55vw, 1.625rem);   /* sub-section */
+  --fs-h3: clamp(1.125rem, 1.07rem + 0.25vw, 1.25rem);    /* minor heading */
+  --fs-body: 1.0625rem;                                   /* 17px */
+  --fs-small: 0.875rem;                                   /* captions, meta */
+  --fs-nav: 0.9375rem;                                    /* navigation */
+  --fs-brand: 1.25rem;                                    /* site name */
+
+  --lh-tight: 1.2;
+  --lh-heading: 1.3;
+  --lh-body: 1.65;
+
+  /* Colour */
+  --color-text: #212121;
+  --color-muted: #5f6368;
+  --color-brand: #617e4d;          /* headings */
+  --color-brand-dark: #4f694d;
+  --color-accent: #8bbb67;         /* rules, decorative */
+  --color-surface-dark: #637457;   /* dark green bands / buttons */
+  --color-surface-tint: #eef3e5;   /* pale green bands */
+  --color-on-dark-accent: #fcfbdf; /* headings & links on dark bands */
+  --color-alert: #b3261e;          /* deadlines, warnings */
+
+  --color-link: #3f6b2f;
+  --color-link-hover: #2a4a1f;
+  --color-link-underline: rgba(63, 107, 47, 0.45);
+
+  --color-sakura: #f4b6c2;
+  --color-sakura-edge: #e0879d;
+  --color-sakura-center: #f2c14e;
+}
+
+/* ---------- Base ---------- */
+html, body { font-family: var(--font-sans); }
+body {
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body copy (paragraphs, list items, text boxes) */
+.zfr3Q {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+}
+
+/* ---------- Headings: one scale for every page ---------- */
+.duRjpb, .JYVBee, .OmQG5e {
+  font-family: var(--font-sans);
+  line-height: var(--lh-heading);
+  text-transform: none;
+  text-wrap: balance;
+}
+.duRjpb { font-size: var(--fs-h1); font-weight: 700; letter-spacing: -0.015em; }
+.JYVBee { font-size: var(--fs-h2); font-weight: 700; letter-spacing: -0.01em; }
+.OmQG5e { font-size: var(--fs-h3); font-weight: 600; letter-spacing: 0; }
+
+/* Page title band and banner sections */
+.LB7kq .duRjpb, .gk8rDe .duRjpb {
+  font-size: var(--fs-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: var(--lh-tight);
+}
+.LB7kq .JYVBee { font-size: var(--fs-h2); font-weight: 500; }
+
+/* Pasted text inside headings must not fight the heading style */
+.duRjpb span, .JYVBee span, .OmQG5e span { font-weight: inherit !important; font-style: inherit; }
+
+/* ---------- Links (content) ---------- */
+a.XqQF9c, a.aw5Odc.mD9Vkc {
+  color: var(--color-link) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--color-link-underline) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.2em;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+a.XqQF9c *, a.aw5Odc.mD9Vkc * {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+a.XqQF9c:hover, a.aw5Odc.mD9Vkc:hover {
+  color: var(--color-link-hover) !important;
+  text-decoration-color: currentColor !important;
+  text-decoration-thickness: 2px !important;
+}
+a.XqQF9c:focus-visible, a.aw5Odc.mD9Vkc:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* On dark/photo bands */
+.lQAHbd a.XqQF9c, .O13XJf a.XqQF9c, .cJgDec a.XqQF9c,
+.lQAHbd a.aw5Odc.mD9Vkc, .O13XJf a.aw5Odc.mD9Vkc, .cJgDec a.aw5Odc.mD9Vkc {
+  color: var(--color-on-dark-accent) !important;
+  text-decoration-color: rgba(252, 251, 223, 0.6) !important;
+}
+.lQAHbd a.XqQF9c:hover, .O13XJf a.XqQF9c:hover, .cJgDec a.XqQF9c:hover { color: #fff !important; }
+
+/* ---------- Site chrome ---------- */
+.TlfmSc { font-family: var(--font-sans); font-size: var(--fs-brand); font-weight: 700; letter-spacing: 0.02em; text-transform: none; }
+.Zjiec  { font-family: var(--font-sans); font-size: var(--fs-h2); font-weight: 700; letter-spacing: 0.01em; text-transform: none; }
+.PsKE7e, .JzO0Vc { font-family: var(--font-sans); }
+.PsKE7e { font-size: var(--fs-nav); font-weight: 500; }
+.QmpIrf {
+  font-family: var(--font-sans);
+  font-size: var(--fs-nav);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 22px;
+}
+.Y4CpGd { font-family: var(--font-sans); font-size: var(--fs-nav); }
+.TMjjoe { font-family: var(--font-sans); font-size: var(--fs-small); line-height: 1.4; color: var(--color-muted); }
+
+/* ==========================================================================
+   Timelines
+   Markup: a list  <ul class="tl"><li><p><span class="tl-date">…</span>…</p></li></ul>
+           or flat <p|h3 class="tl-item"><span class="tl-date">…</span>…</p|h3>
+           followed by optional <p class="tl-body">…</p> details.
+   ========================================================================== */
+.tl, .tl-item { font-family: var(--font-timeline); }
+
+.tl {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1rem 0 0 !important;
+}
+.tl > li { margin-left: 0 !important; }
+.tl > li + li { margin-top: 0.6rem !important; }
+
+.tl > li > p, .tl-item {
+  position: relative;
+  padding-left: 1.9rem !important;
+}
+.tl > li > p::before, .tl-item::before {
+  content: "";
+  display: block;           /* site.css hides .zfr3Q:before */
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  pointer-events: none;
+  top: calc((1lh - 1.25rem) / 2);
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Cg fill='%23f4b6c2' stroke='%23e0879d' stroke-width='.8' stroke-linejoin='round'%3E%3Cpath d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(72)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(144)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(216)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(288)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3C/g%3E%3Ccircle r='2.4' fill='%23f2c14e'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* Headings used as timeline entries keep the heading scale but the timeline face */
+h3.tl-item { font-family: var(--font-timeline); letter-spacing: -0.005em; }
+h3.tl-item::before { top: calc((1lh - 1.25rem) / 2); }
+
+.tl-date {
+  font-family: var(--font-timeline);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-brand-dark);
+  margin-right: 0.6em;
+}
+/* Calendar-style lists: dates in a column, wrapped text hangs beside them */
+.tl > li > p { padding-left: calc(1.9rem + 8.5em) !important; }
+.tl .tl-date { display: inline-block; width: 8.5em; margin: 0 0 0 -8.5em; }
+h3.tl-item .tl-date { color: inherit; font-weight: 700; }
+h3.tl-item .tl-date::after { content: " ·"; color: var(--color-accent); }
+
+/* Details that belong to the entry above line up with its text; they stay in
+   the body face for readability */
+.tl-body { margin-left: 1.9rem !important; padding-left: 0 !important; }
+ul.tl-body { padding-left: 1.25rem !important; }
+
+@media only screen and (max-width: 479px) {
+  .tl > li > p { padding-left: 1.9rem !important; }
+  .tl .tl-date { display: block; width: auto; margin: 0; }
+}
+@supports not (top: 1lh) {
+  .tl > li > p::before, .tl-item::before, h3.tl-item::before { top: 0.2em; }
+}
