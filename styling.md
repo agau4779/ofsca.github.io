@@ -108,6 +108,21 @@ Two markup patterns:
 
 To add an entry, copy an existing one and keep the classes. To start a new timeline on another page, use one of the two patterns above. No extra CSS is needed.
 
+## Flower lists
+
+Plain bulleted lists of links use the same sakura bullet as timelines, but stay in the body font:
+
+```html
+<ul class="flower-list">
+  <li class="zfr3Q"><a class="XqQF9c" href="…">Youth Exchange</a><span class="link-meta">Flickr</span></li>
+</ul>
+```
+
+- The flower SVG is defined once as the `--flower` token in `:root`. Timelines and flower lists both use it.
+- `.link-meta` is an optional small, muted label after a link, for example which site the link opens.
+- Use flower lists instead of `~`, `-` or `•` characters typed into paragraphs.
+- On the Gallery page, `.gallery-groups` lays out several headed flower lists side by side. They stack into one column on narrow screens.
+
 ## Sidebar navigation
 
 The sidebar has flat, always-expanded groups. Each group is a small uppercase heading with a list of links under it. The site ships without JavaScript, so nothing in the sidebar collapses. There is no "Home" link: the logo and the "OFSCA" title already go to the home page. The logo fills the sidebar width (with a 16px gutter on each side), which is about its native 257px size.
