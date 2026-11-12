@@ -42,6 +42,10 @@
   --color-sakura-edge: #e0879d;
   --color-sakura-center: #f2c14e;
 
+  /* Tallest a content image or carousel may render, so the text that follows
+     stays above the fold on a ~768–900px-tall laptop screen */
+  --img-max-h: min(55vh, 520px);
+
   /* Sakura bullet used by timelines and .flower-list */
   --flower: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Cg fill='%23f4b6c2' stroke='%23e0879d' stroke-width='.8' stroke-linejoin='round'%3E%3Cpath d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(72)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(144)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(216)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3Cpath transform='rotate(288)' d='M0-1.5C-3.8-3.6-4.8-8.6-2.3-11.4L0-9.7 2.3-11.4C4.8-8.6 3.8-3.6 0-1.5Z'/%3E%3C/g%3E%3Ccircle r='2.4' fill='%23f2c14e'/%3E%3C/svg%3E");
 }
@@ -290,3 +294,20 @@ ul.tl-body { padding-left: 1.25rem !important; }
 .gallery-groups { margin-top: 0.75rem; }
 .gallery-groups .OmQG5e { margin-top: 0.75rem; }
 .gallery-feature { max-width: 30rem; margin-top: 1.25rem; border-radius: 6px; }
+
+/* ==========================================================================
+   Content images: never taller than --img-max-h. Width follows the image's
+   own proportions, centred in the column (no cropping, no stretching).
+   ========================================================================== */
+.t3iYD .CENy8b {
+  width: auto !important;          /* beats Sites' inline 100.0x% crop widths */
+  max-width: 100%;
+  max-height: var(--img-max-h);
+  margin: 0 auto !important;
+}
+/* Carousels are background-image boxes sized by aspect-ratio (--ar is set
+   inline from the same value), so cap their width to keep the height in check */
+.mr3rhf {
+  width: min(100%, calc(var(--img-max-h) * var(--ar, 1.5)));
+  margin-inline: auto;
+}

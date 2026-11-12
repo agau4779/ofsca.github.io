@@ -108,6 +108,14 @@ Two markup patterns:
 
 To add an entry, copy an existing one and keep the classes. To start a new timeline on another page, use one of the two patterns above. No extra CSS is needed.
 
+## Images
+
+Content images (`.t3iYD .CENy8b`) and image carousels (`.mr3rhf`) are never taller than `--img-max-h`, which is `min(55vh, 520px)`. That keeps the text after an image on screen on a typical laptop: about 375px tall in a 1366×768 window.
+
+- **Plain images** keep their own proportions and are centred in the column. They are never stretched or cropped. Google Sites' tiny inline crop widths (`width: 100.0x%`) are overridden.
+- **Carousels** are sized by `aspect-ratio`. Each one also carries the same number as `--ar` in its inline style, which lets CSS narrow the box instead of cropping the photos. When you add a carousel, set both, e.g. `style="aspect-ratio: 1.26 / 1; --ar: 1.26;"`.
+- Small images in side-by-side columns are already under the limit, so they're unaffected.
+
 ## Flower lists
 
 Plain bulleted lists of links use the same sakura bullet as timelines, but stay in the body font:
