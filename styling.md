@@ -131,7 +131,7 @@ The sidebar has flat, always-expanded groups. Each group is a small uppercase he
 | --- | --- |
 | About OFSCA | About Us, History |
 | Get Involved | 2026 Calendar, Become a Member, Contact Us |
-| Ongoing Activities | All Programs, Youth Exchange, Asian-Pacific Children's Convention, Bridge Club International, Adult Exchange, Otsukimi Moon-Viewing Party, Torii Gate |
+| Ongoing Activities | Program Overview, Youth Exchange, Asian-Pacific Children's Convention, Bridge Club International, Adult Exchange, Otsukimi Moon-Viewing Party, Torii Gate |
 | Past Events | 60th Anniversary (2022–2023), Mosaic Mural Project → About the Art, Pebble Collection Day, Mosaic Class & Fabrication |
 | Resources | Photo Gallery, Links |
 
